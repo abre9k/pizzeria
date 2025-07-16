@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pizzeria Madonna de la Salette</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="pizza-logo.png" alt="Logo Pizzeria Madonna de la Salette" style="width: 100px">
+        <nav>
+            <ul>
+                <li><a href="index.html" style="color: white;">Startseite</a></li>
+                <li><a href="menu.html" style="color: white;">Menü</a></li>
+                <li><a href="lieferung.html" style="color: white;">Lieferung</a></li>
+                <li><a href="gaestebuch.html" style="color: white;">Gästebuch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main>
+        <section>
+            <h1>Pizzeria Madonna de la Salette</h1>
+            <h2>Gästebuch</h2>
+        </section>
+        <section class="guestbook">
+            <form id="guestbook-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required maxlength="50" placeholder="Dein Name" />
+
+                <label for="message">Nachricht:</label>
+                <textarea id="message" required maxlength="300" placeholder="Deine Nachricht"></textarea>
+                <BR>
+                <button type="submit" class="submit-button">Eintrag hinzufügen</button>
+            </form>
+            <div id="entries"></div>
+            <button id="clear-guestbook">Gästebuch leeren</button>
+
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer-div2">
+            <p id="opening-hours"><strong>Öffnungszeiten: Di - So 18:00 - 23:00</strong></p>
+            <!--<span>Telefon:</span>-->
+            <p><a href="tel:+41798147228">+41&nbsp;71&nbsp;234&nbsp;56&nbsp;78</a></p>
+            <p id="standorte">Standorte:</p>
+            <ul>
+                <li>St. Gallen: Hauptstrasse 1, 9000 St. Gallen | Tel: 071 111 11 11</li>
+                <li>Uzwil: Hauptstrasse 2, 9240 Uzwil | Tel: 071 222 22 22</li>
+                <li>Rheineck: Hauptstrasse 3, 9320 Rheineck | Tel: 071 333 33 33</li>
+            </ul>
+            <br>
+            <p>© 2025 Pizzeria Madonna de la Salette</p>
+        </div>
+        <div id="footer-div2">
+            <nav>
+                <ul class="footer-liste">
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+
+
+
+
+<script>
+    const form = document.getElementById('guestbook-form');
+    const entriesDiv = document.getElementById('entries');
+
+    // Lade gespeicherte Einträge oder leeres Array
+    let entries = JSON.parse(localStorage.getItem('guestbookEntries')) || [];
+
+    // Funktion zum Anzeigen der Einträge
+    function renderEntries() {
+        entriesDiv.innerHTML = '';
+        entries.forEach(entry => {
+            const entryEl = document.createElement('div');
+            entryEl.classList.add('entry');
+            entryEl.innerHTML = `
+                    <strong>${escapeHTML(entry.name)}</strong>
+                    <time>${new Date(entry.date).toLocaleString()}</time>
+                    <p>${escapeHTML(entry.message)}</p>
+                `;
+            entriesDiv.appendChild(entryEl);
+        });
+    }
+
+    // HTML Escaping für Sicherheit
+    function escapeHTML(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // Neue Einträge speichern und anzeigen
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        const name = form.name.value.trim();
+        const message = form.message.value.trim();
+
+        if (!name || !message) {
+            alert('Bitte Name und Nachricht eingeben.');
+            return;
+        }
+
+        const newEntry = {
+            name,
+            message,
+            date: new Date().toISOString()
+        };
+
+        entries.unshift(newEntry); // Neuester Eintrag oben
+        localStorage.setItem('guestbookEntries', JSON.stringify(entries));
+
+        renderEntries();
+
+        form.reset();
+    });
+
+    // Zeige Einträge beim Laden
+    renderEntries();
+
+    // Leeren
+
+    document.getElementById('clear-guestbook').addEventListener('click', () => {
+        if (confirm('Willst du wirklich alle Einträge löschen?')) {
+            entries = [];
+            localStorage.removeItem('guestbookEntries'); // oder: localStorage.setItem('guestbookEntries', '[]');
+            renderEntries();
+        }
+    });
+    // Seite springt zurück nach oben beim Neuladen
+    window.addEventListener('load', () => {
+        setTimeout(() => window.scrollTo(0, 0), 0);
+    });</script>
+</script>
+
+</html>
