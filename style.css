@@ -86,10 +86,35 @@
         }
 */
         section {
-            margin-left: 8rem;
-            margin-top: 3.5rem;
-            margin-bottom: 5rem;
+            margin: 3.5rem 1rem 5rem 1.5rem;
             max-width: 1200px;
+        }
+
+        @media (min-width: 769px) {
+            section {
+                margin-left: 8rem;
+                margin-right: 8rem;
+            }
+        }
+
+        #pizza-bild,
+        .location iframe {
+            width: 100%;
+            height: auto;
+        }
+
+        .location {
+            flex: 1 1 300px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+
+            footer {
+                padding: 10px;
+            }
         }
 
         #h3-standorte {
