@@ -354,3 +354,37 @@
         .price {
             text-align: right;
         }
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+    }
+
+    header nav a {
+        font-size: 1rem;
+    }
+
+    label,
+    #mail-feld input[type="email"],
+    .submit-button {
+        font-size: 1rem;
+    }
+
+    footer p,
+    footer li {
+        font-size: 0.95rem;
+    }
+}
