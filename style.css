@@ -388,3 +388,77 @@
         font-size: 0.95rem;
     }
 }
+
+@media (max-width: 768px) {
+
+    /* HEADINGS */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+    }
+
+    /* HEADER-NAVIGATION */
+    header nav a {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    /* FORMULAR: NEWSLETTER */
+    #mail-feld label,
+    #mail-feld input[type="email"],
+    .submit-button {
+        font-size: 1rem;
+    }
+
+    #mail-feld input[type="email"] {
+        width: 100%;
+    }
+
+    /* FOOTER */
+    footer p,
+    footer li,
+    footer a {
+        font-size: 0.95rem;
+    }
+
+    #footer-div2 {
+        padding-left: 0;
+    }
+
+    .footer-liste {
+        padding-left: 0;
+    }
+
+    /* LOCATION-INFOS */
+    .location {
+        font-size: 1rem;
+    }
+
+    .location iframe {
+        width: 100% !important;
+        height: auto;
+    }
+
+    .locations {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
