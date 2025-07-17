@@ -47,7 +47,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #c00;
+    color: #ffb366;
 }
 
 h1 {
@@ -337,7 +337,6 @@ tbody {
     }
 
     nav a {
-        color: white;
         display: block;
         padding: 8px 0;
     }
