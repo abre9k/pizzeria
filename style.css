@@ -196,6 +196,7 @@ form {
 label {
     display: block;
     margin: 10px 0 5px;
+    font-size: 1rem;
 }
 
 input[type="text"],
@@ -334,6 +335,15 @@ tbody {
     #mail-feld input[type="email"],
     .submit-button {
         font-size: 1rem;
+    }
+
+    form label {
+        font-size: 0.95rem;
+    }
+
+    form input[type="text"],
+    form textarea {
+        font-size: 0.95rem;
     }
 
     footer {
