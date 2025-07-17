@@ -1,382 +1,359 @@
-html {
-    scroll-behavior: smooth;
-}
-
-html,
-body {
-    font-family: Roboto, sans-serif;
-    background-color: #f9dcc8;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #ff8c42;
-    border: 1px solid #727272;
-    margin: 0;
-}
-
-header img {
-    width: 100px;
-    margin: 0 20px;
-    padding: 10px;
-    border: 2px solid #727272; /* genauer definiert */
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 80px;
-    margin: 0;
-    padding: 0 50px 0 0;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #c00;
-}
-
-header nav a {
-    font-size: 1.1rem;
-}
-
-footer p,
-footer li,
-footer a {
-    font-size: 1rem;
-}
-
-section {
-    margin: 3.5rem 1rem 5rem 1.5rem;
-    max-width: 1200px;
-}
-
-@media (min-width: 769px) {
-    section {
-        margin: 3.5rem 8rem 5rem 8rem;
-    }
-}
-
-#pizza-bild,
-.location iframe {
-    width: 100%;
-    height: auto;
-}
-
-.location {
-    flex: 1 1 300px;
-    font-size: 110%;
-}
-
-.location iframe {
-    width: 300px;
-    height: 300px;
-    border: 0;
-}
-
-h1 {
-    font-size: 3rem;
-    margin: 2rem 0 1rem;
-}
-
-h2 {
-    font-size: 2rem;
-    margin: 0 0 4rem 0;
-}
-
-h3 {
-    font-size: 1.5rem;
-    margin: 1rem 0 0;
-}
-
-h4 {
-    font-size: 1.3rem;
-}
-
-#h3-standorte {
-    margin-bottom: 0;
-}
-
-#pizza-bild {
-    margin-top: 1rem;
-    max-width: 600px;
-}
-
-.locations {
-    display: flex;
-    gap: 7rem;
-    flex-wrap: wrap;
-}
-
-#clear-guestbook {
-    width: auto;
-    font-size: 0.75rem;
-    padding: 2px 6px;
-}
-
-footer {
-    text-align: center;
-    margin: 1rem 0;
-    border-top: 1px solid #727272;
-    padding: 1rem 0 0 2rem;
-}
-
-footer ul {
-    list-style: none;
-    padding-left: 1rem;
-    padding-top: 1rem;
-}
-
-footer ul li {
-    text-align: center;
-}
-
-/* Newsletter */
-#mail-feld {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-}
-
-#mail-feld label {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-#mail-feld input[type="email"] {
-    padding: 10px 15px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s;
-    width: 100%;
-}
-
-#mail-feld input[type="email"]:focus {
-    border-color: #ff8c42;
-    /* Zugänglicher Fokus: leichter Schatten */
-    box-shadow: 0 0 5px #ff8c42;
-}
-
-/* Button */
-.submit-button {
-    background-color: #ff8c42;
-    color: #fff;
-    padding: 10px 20px;
-    border: solid 1px black;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.submit-button:hover {
-    background-color: #e6762f;
-}
-
-/* Gästebuch */
-#h2guestbook {
-    text-align: center;
-    margin-bottom: -6rem;
-}
-
-form {
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-    font-size: 1rem;
-}
-
-input[type="text"],
-textarea {
-    width: 80%;
-    max-width: 400px;
-    padding: 8px;
-    box-sizing: border-box;
-    font-size: 1em;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 200px;
-    font-family: Roboto, sans-serif;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-}
-
-.entry {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-}
-
-.entry:last-child {
-    border-bottom: none;
-}
-
-.entry strong {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.entry time {
-    font-size: 0.8em;
-    color: #666;
-}
-
-/* Menu-Tabelle */
-table {
-    border-collapse: collapse;
-    width: 650px;
-    max-width: 100%;
-    font-size: 1.1rem;
-    margin-top: 2rem;
-    table-layout: fixed;
-}
-
-th,
-td {
-    border: 1px solid #aaa;
-    padding: 12px;
-    text-align: left;
-}
-
-thead {
-    background-color: #ffd2a5;
-}
-
-tbody {
-    background-color: #fff1e5;
-}
-
-.pizza-name {
-    font-weight: bold;
-}
-
-.border-none {
-    border-collapse: collapse;
-    border: none;
-    margin-bottom: 4rem;
-}
-
-.border-none td {
-    border: 1px solid #aaa;
-}
-
-.border-none tr:first-child td {
-    border-top: none;
-}
-
-.border-none tr:last-child td {
-    border-bottom: none;
-}
-
-.border-none tr td:first-child {
-    border-left: none;
-}
-
-.border-none tr td:last-child {
-    border-right: none;
-}
-
-/* Text rechtsbündig für Preise */
-.price {
-    text-align: right;
-}
-
-/* Responsive Anpassungen */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
-
-    h4 {
-        font-size: 1rem;
-    }
-
-    header {
-        padding: 10px;
-    }
-
-    header nav a {
-        font-size: 1rem;
-    }
-
-    nav ul {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-right: 0;
-    }
-
-    label,
-    #mail-feld input[type="email"],
-    .submit-button {
-        font-size: 1rem;
-    }
-
-    form label {
-        font-size: 0.95rem;
-    }
-
-    form input[type="text"],
-    form textarea {
-        font-size: 0.95rem;
-    }
-
-    footer {
-        padding: 10px;
-    }
-
-    footer p,
-    footer li,
-    footer a {
-        font-size: 0.95rem;
-    }
-
-    #footer-div2,
-    .footer-liste {
-        padding-left: 0;
-    }
-
-    .location {
-        font-size: 1rem;
-    }
-
-    .location iframe {
-        width: 100% !important;
-        height: auto;
-    }
-
-    .locations {
-        flex-direction: column;
-        gap: 3rem;
-    }
-}
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html,
+        body {
+            font-family: Roboto, sans-serif;
+            background-color: #f9dcc8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #ff8c42;
+            border: 1px solid #727272;
+            margin: 0%;
+
+        }
+
+        #nav-list {
+            color: white;
+        }
+
+        header img {
+            width: 100px;
+            margin: 0 20px;
+            padding: 10px;
+            border: solid
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 80px;
+            margin: 0;
+            padding: 0;
+            padding-right: 50px;
+            font-size: 120%;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #c00;
+        }
+
+        h1 {
+            font-size: 300%;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            /* oder 0, je nach gewünschtem Abstand */
+        }
+
+        h2 {
+            margin: 0 0 4rem 0
+        }
+
+        h3 {
+            margin: 1rem 0 0 0
+        }
+
+        /*
+        #h2-newsletter {
+            margin: 3rem 0rem;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        #h2-about-title {
+            margin-bottom: 3rem;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        #h2-standorte {
+            margin-bottom: -7rem;
+            margin-left: 0;
+            margin-right: 0;
+        }
+*/
+        section {
+            margin: 3.5rem 1rem 5rem 1.5rem;
+            max-width: 1200px;
+        }
+
+        @media (min-width: 769px) {
+            section {
+                margin-left: 8rem;
+                margin-right: 8rem;
+            }
+        }
+
+        #pizza-bild,
+        .location iframe {
+            width: 100%;
+            height: auto;
+        }
+
+        .location {
+            flex: 1 1 300px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+
+            footer {
+                padding: 10px;
+            }
+        }
+
+        #h3-standorte {
+            margin-bottom: 0;
+            /* oder ein anderer gewünschter Wert */
+        }
+
+        #pizza-bild {
+            margin-top: 1rem;
+            max-width: 600px;
+        }
+
+        .locations {
+            display: flex;
+            gap: 7rem;
+            flex-wrap: wrap;
+            /* Kein Umbruch, alle Items bleiben in einer Zeile */
+        }
+
+        .location {
+            flex: 0 0 300px;
+            /* fixe Breite, passend zum iframe */
+            min-width: 300px;
+            /* Minimum 300px breit */
+            box-sizing: border-box;
+            /* Padding & Border in Breite enthalten */
+            font-size: 110%;
+            /* Schrift etwas größer */
+        }
+
+        .location iframe {
+            width: 300px;
+            /* Feste Breite */
+            height: 300px;
+            /* Feste Höhe (1:1-Verhältnis) */
+            border: 0;
+        }
+
+
+
+        #clear-guestbook {
+            width: auto;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+        }
+
+        footer {
+            text-align: center;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            border-top: 1px solid #727272;
+            padding-top: 1rem;
+            padding-left: 2rem;
+
+
+            ul {
+                list-style: none;
+            }
+        }
+
+        footer ul li {
+            text-align: center;
+        }
+
+
+        .footer-liste {
+            padding-left: 1rem;
+            padding-top: 1rem;
+        }
+
+
+        /*Newsletter*/
+        #mail-feld {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+        }
+
+        #mail-feld label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #mail-feld input[type="email"] {
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #mail-feld input[type="email"]:focus {
+            border-color: #ff8c42;
+        }
+
+        .submit-button {
+            background-color: #ff8c42;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border: solid 1px black;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #submit-button:hover {
+            background-color: #e6762f;
+        }
+
+
+
+        /* EXKLUSIV GÄSTEBUCH*/
+        #h2guestbook {
+            text-align: center;
+            margin-bottom: -6rem;
+        }
+
+        form {
+            margin-bottom: 30px;
+            text-align: center;
+
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 80%;
+            /* oder z.B. 400px */
+            max-width: 400px;
+            /* maximale Breite */
+            padding: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 200px;
+            font-family: Roboto, sans-serif;
+
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .entry {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .entry:last-child {
+            border-bottom: none;
+        }
+
+        .entry strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .entry time {
+            font-size: 0.8em;
+            color: #666;
+        }
+
+
+        /* EXKLUSIV MENU */
+        table {
+            border-collapse: collapse;
+            width: 650px;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            table-layout: fixed;
+            /* sorgt für gleichmäßige Spalten */
+
+        }
+
+        th,
+        td {
+            border: 1px solid #aaa;
+            padding: 12px;
+            text-align: left;
+
+        }
+
+
+        thead {
+            background-color: #ffd2a5;
+        }
+
+        tbody {
+            background-color: #fff1e5;
+        }
+
+        .pizza-name {
+            font-weight: bold;
+        }
+
+
+        .border-none {
+            border-collapse: collapse;
+            border: none;
+            margin-bottom: 4rem;
+        }
+
+        .border-none td {
+            border: 1px solid #aaa;
+        }
+
+        .border-none tr:first-child td {
+            border-top: none;
+        }
+
+        .border-none tr:last-child td {
+            border-bottom: none;
+        }
+
+        .border-none tr td:first-child {
+            border-left: none;
+        }
+
+        .border-none tr td:last-child {
+            border-right: none;
+        }
+
+        .price {
+            text-align: right;
+        }
+
+
