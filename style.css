@@ -24,7 +24,7 @@ header img {
     width: 100px;
     margin: 0 20px;
     padding: 10px;
-    border: solid;
+    border: 2px solid #727272; /* genauer definiert */
 }
 
 nav ul {
@@ -165,8 +165,11 @@ footer ul li {
 
 #mail-feld input[type="email"]:focus {
     border-color: #ff8c42;
+    /* Zugänglicher Fokus: leichter Schatten */
+    box-shadow: 0 0 5px #ff8c42;
 }
 
+/* Button */
 .submit-button {
     background-color: #ff8c42;
     color: #fff;
@@ -178,7 +181,7 @@ footer ul li {
     transition: background-color 0.3s ease;
 }
 
-#submit-button:hover {
+.submit-button:hover {
     background-color: #e6762f;
 }
 
@@ -244,6 +247,7 @@ button {
 table {
     border-collapse: collapse;
     width: 650px;
+    max-width: 100%;
     font-size: 1.1rem;
     margin-top: 2rem;
     table-layout: fixed;
@@ -294,6 +298,7 @@ tbody {
     border-right: none;
 }
 
+/* Text rechtsbündig für Preise */
 .price {
     text-align: right;
 }
@@ -305,15 +310,15 @@ tbody {
     }
 
     h2 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 
     h3 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     h4 {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 
     header {
