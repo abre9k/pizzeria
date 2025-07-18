@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>Pizzeria Madonna de la Salette</title>
     <link rel="stylesheet" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,66 +24,23 @@
     <main>
         <section>
             <h1>Pizzeria Madonna de la Salette</h1>
-            <h2>Leckere Pizzas aus St. Gallen!</h2>
+            <h2>Gästebuch</h2>
         </section>
-        <section class="about">
-            <h3 id="h3-about-title">Über uns</h3>
-            <br>
-            <p class="about-text">Seit 1980 steht die <strong>Pizzeria Madonna de la Salette</strong> für authentische
-                italienische
-                Küche im Kanton St. Gallen. Unsere Leidenschaft für traditionelle Rezepte und
-                hochwertige Zutaten hat die <strong>Pizzeria Madonna de la Salette</strong> über vier Jahrzehnte hinweg
-                zu einer festen Grösse in der Region gemacht.</p>
-
-            <p class="about-text">An unseren <strong>drei Standorten</strong> im Kanton St. Gallen (St. Gallen, Uzwil,
-                Rheineck)
-                bringen wir ein Stück Italien in Ihre Nähe. Unsere Spezialitäten stammen aus der malerischen Region
-                <strong>Valpolicella</strong> – bekannt für aromatische Weine, herzhaftes Olivenöl und unvergessliche
-                Geschmackserlebnisse.
-            </p>
-
-            <p class="about-text">Lassen Sie sich von unserer Küche verwöhnen!</p>
-            <img src="pizza-3010062_1920.jpg" id="pizza-bild" alt="Logo Pizzeria Madonna de la Salette">
-
-        </section>
-        <section id="h3-standorte">
-            <h3 id="h3-locations-title" style="margin-bottom: -3rem;">Standorte:</h3>
-        </section>
-
-        <section class="locations">
-            <div class="location">
-                <h4>Hauptstrasse 1, 9000 St. Gallen</h5>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38522.3058376064!2d9.322096333840916!3d47.424164760724864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b1e297633d855%3A0x9a2250081ffe6114!2sSt%20Gallen!5e1!3m2!1sen!2sch!4v1752484980339!5m2!1sen!2sch"
-                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="location">
-                <h4>Hauptstrasse 2, 9240 Uzwil</h5>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38507.57140743066!2d9.070027484159581!3d47.444296438956336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479ae88aa4f1baf9%3A0xbaca3bdf74beb107!2sUzwil!5e1!3m2!1sen!2sch!4v1752485141535!5m2!1sen!2sch"
-                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="location">
-                <h4>Hauptstrasse 3, 9320 Rheineck</h5>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19243.33407660475!2d9.563359743087398!3d47.47284545615012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b10f1fc8e927b%3A0x6ae0f3631b26f71b!2sRheineck!5e1!3m2!1sen!2sch!4v1752485193903!5m2!1sen!2sch"
-                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </section>
-        <section>
-            <h3 id="h3-newsletter-title">Newsletter der Pizzeria Madonna de la Salette</h3>
-            <br>
-            <form id="mail-feld">
-                <label for="email" style="text-align: left;">E-Mail-Adresse:</label>
-                <input type="email" id="email" name="email" required placeholder="E-Mail">
-                <button type="submit" class="submit-button">Jetzt anmelden!</button>
-                <p id="error-msg" style="color: red; display: none;"></p>
+        <section class="guestbook">
+            <form id="guestbook-form">
+                <label for="name"><!--Name:--></label>
+                <input type="text" id="name" required maxlength="50" placeholder="Dein Name" />
+                <br>
+                <br>
+                <label for="message"><!--Nachricht:--></label>
+                <textarea id="message" required maxlength="300" placeholder="Deine Nachricht"></textarea>
+                <BR>
+                <button type="submit" class="submit-button">Eintrag hinzufügen</button>
             </form>
-        </section>
+            <div id="entries"></div>
+            <button id="clear-guestbook">Gästebuch leeren</button>
 
+        </section>
     </main>
 
     <footer>
@@ -109,16 +66,81 @@
     </footer>
 </body>
 
-<script>document.getElementById('mail-feld').addEventListener('submit', function (e) {
-        e.preventDefault(); // ❗ Verhindert das Weiterleiten / Absenden
 
-        const errorMsg = document.getElementById('error-msg');
-        errorMsg.textContent = 'Newsletter-Anmeldung derzeit nicht möglich.';
-        errorMsg.style.display = 'block';
+
+
+
+<script>
+    const form = document.getElementById('guestbook-form');
+    const entriesDiv = document.getElementById('entries');
+
+    // Lade gespeicherte Einträge oder leeres Array
+    let entries = JSON.parse(localStorage.getItem('guestbookEntries')) || [];
+
+    // Funktion zum Anzeigen der Einträge
+    function renderEntries() {
+        entriesDiv.innerHTML = '';
+        entries.forEach(entry => {
+            const entryEl = document.createElement('div');
+            entryEl.classList.add('entry');
+            entryEl.innerHTML = `
+                    <strong>${escapeHTML(entry.name)}</strong>
+                    <time>${new Date(entry.date).toLocaleString()}</time>
+                    <p>${escapeHTML(entry.message)}</p>
+                `;
+            entriesDiv.appendChild(entryEl);
+        });
+    }
+
+    // HTML Escaping für Sicherheit
+    function escapeHTML(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // Neue Einträge speichern und anzeigen
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        const name = form.name.value.trim();
+        const message = form.message.value.trim();
+
+        if (!name || !message) {
+            alert('Bitte Name und Nachricht eingeben.');
+            return;
+        }
+
+        const newEntry = {
+            name,
+            message,
+            date: new Date().toISOString()
+        };
+
+        entries.unshift(newEntry); // Neuester Eintrag oben
+        localStorage.setItem('guestbookEntries', JSON.stringify(entries));
+
+        renderEntries();
+
+        form.reset();
+    });
+
+    // Zeige Einträge beim Laden
+    renderEntries();
+
+    // Leeren
+
+    document.getElementById('clear-guestbook').addEventListener('click', () => {
+        if (confirm('Willst du wirklich alle Einträge löschen?')) {
+            entries = [];
+            localStorage.removeItem('guestbookEntries'); // oder: localStorage.setItem('guestbookEntries', '[]');
+            renderEntries();
+        }
     });
     // Seite springt zurück nach oben beim Neuladen
     window.addEventListener('load', () => {
         setTimeout(() => window.scrollTo(0, 0), 0);
     });</script>
+</script>
 
 </html>
