@@ -12,7 +12,7 @@ body {
 
 h1,
 h2 {
-font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes', cursive;
 }
 
 header {
@@ -30,12 +30,26 @@ header {
 }
 
 header img {
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
     width: 100px;
     margin: 0 20px;
     padding: 10px;
-    border: solid;
+/*    border: solid; */
     /* Hier fehlt evtl. eine Farbe, z.B. 'border: 1px solid black;' */
 }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
 nav ul {
     list-style: none;
@@ -62,7 +76,7 @@ h1 {
 }
 
 h2 {
-        font-size: 250%;
+    font-size: 250%;
     margin: 0 0 4rem 0;
 }
 
